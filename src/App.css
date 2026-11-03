@@ -1,0 +1,39 @@
+/* Custom Component Animations & Keyframes */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Background size 200% animation utility */
+.bg-size-200 {
+  background-size: 200% 200%;
+}
+
+/* Print Styles for Developer CV */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  header, footer, #three-bg, .custom-cursor, button, [role="button"] {
+    display: none !important;
+  }
+  
+  .glass-card, .glass-panel {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+}

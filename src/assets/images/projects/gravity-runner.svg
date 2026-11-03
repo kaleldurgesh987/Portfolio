@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050819" />
+      <stop offset="50%" stop-color="#0a122e" />
+      <stop offset="100%" stop-color="#03050d" />
+    </linearGradient>
+
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+
+    <linearGradient id="neonPink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EC4899" />
+      <stop offset="100%" stop-color="#A855F7" />
+    </linearGradient>
+
+    <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="500" rx="16" fill="url(#grBg)" />
+
+  <!-- Cyber Grid Lines -->
+  <g stroke="rgba(0,240,255,0.08)" stroke-width="1">
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    <line x1="150" y1="0" x2="150" y2="500" />
+    <line x1="300" y1="0" x2="300" y2="500" />
+    <line x1="450" y1="0" x2="450" y2="500" />
+    <line x1="600" y1="0" x2="600" y2="500" />
+  </g>
+
+  <!-- Top Ceiling Platform (Inverted Gravity Floor) -->
+  <rect x="0" y="30" width="800" height="25" fill="#0E172E" stroke="#A855F7" stroke-width="2" filter="url(#glowEffect)" />
+  <!-- Ceiling Spikes -->
+  <polygon points="260,55 275,85 290,55" fill="#EF4444" filter="url(#glowEffect)" />
+  <polygon points="290,55 305,85 320,55" fill="#EF4444" filter="url(#glowEffect)" />
+  <polygon points="560,55 575,85 590,55" fill="#EF4444" filter="url(#glowEffect)" />
+
+  <!-- Bottom Floor Platform -->
+  <rect x="0" y="445" width="800" height="25" fill="#0E172E" stroke="#00F0FF" stroke-width="2" filter="url(#glowEffect)" />
+  <!-- Floor Spikes -->
+  <polygon points="400,445 415,415 430,445" fill="#EF4444" filter="url(#glowEffect)" />
+  <polygon points="430,445 445,415 460,445" fill="#EF4444" filter="url(#glowEffect)" />
+
+  <!-- Mid-Air Floating Platforms -->
+  <rect x="180" y="290" width="130" height="14" rx="4" fill="#14213D" stroke="#00F0FF" stroke-width="2" filter="url(#glowEffect)" />
+  <rect x="470" y="180" width="140" height="14" rx="4" fill="#14213D" stroke="#A855F7" stroke-width="2" filter="url(#glowEffect)" />
+
+  <!-- Gravity Inversion Arrow Field in Background -->
+  <g opacity="0.35" filter="url(#glowEffect)">
+    <!-- Up arrows -->
+    <path d="M 330 250 L 330 210 M 320 225 L 330 210 L 340 225" stroke="#A855F7" stroke-width="3" stroke-linecap="round" fill="none" />
+    <path d="M 370 260 L 370 220 M 360 235 L 370 220 L 380 235" stroke="#A855F7" stroke-width="3" stroke-linecap="round" fill="none" />
+    <!-- Down arrows -->
+    <path d="M 640 220 L 640 260 M 630 245 L 640 260 L 650 245" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" fill="none" />
+    <path d="M 680 210 L 680 250 M 670 235 L 680 250 L 690 235" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" fill="none" />
+  </g>
+
+  <!-- Laser Hazard Barrier -->
+  <line x1="380" y1="60" x2="380" y2="180" stroke="#EC4899" stroke-width="3.5" stroke-dasharray="8 6" filter="url(#glowEffect)" />
+  <circle cx="380" cy="60" r="5" fill="#EC4899" />
+  <circle cx="380" cy="180" r="5" fill="#EC4899" />
+
+  <!-- Runner Character Flipping Mid-Air -->
+  <g transform="translate(240, 240) rotate(-25)">
+    <!-- Motion Speed Lines -->
+    <line x1="-50" y1="10" x2="-10" y2="10" stroke="#00F0FF" stroke-width="2" opacity="0.6" />
+    <line x1="-60" y1="0" x2="-20" y2="0" stroke="#A855F7" stroke-width="2" opacity="0.8" />
+    <line x1="-40" y1="-10" x2="-5" y2="-10" stroke="#00F0FF" stroke-width="2" opacity="0.6" />
+
+    <!-- Cyber Cube Hero / Runner -->
+    <rect x="-18" y="-18" width="36" height="36" rx="8" fill="#0F172A" stroke="url(#neonCyan)" stroke-width="3" filter="url(#glowEffect)" />
+    <!-- Energy Core -->
+    <circle cx="0" cy="0" r="8" fill="#00F0FF" filter="url(#glowEffect)" />
+    <!-- Trail Effect -->
+    <circle cx="-12" cy="0" r="4" fill="#A855F7" opacity="0.6" />
+  </g>
+
+  <!-- Game HUD Elements -->
+  <!-- Score Display -->
+  <rect x="30" y="60" width="170" height="42" rx="8" fill="rgba(15,23,42,0.85)" stroke="rgba(0,240,255,0.4)" stroke-width="1.5" />
+  <text x="45" y="86" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#00F0FF">GRAVITY: <tspan fill="#A855F7">FLIPPED</tspan></text>
+
+  <!-- Score Board Right -->
+  <rect x="610" y="60" width="160" height="42" rx="8" fill="rgba(15,23,42,0.85)" stroke="rgba(168,85,247,0.4)" stroke-width="1.5" />
+  <text x="625" y="86" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#E2E8F0">SCORE: <tspan fill="#FACC15">04,820</tspan></text>
+
+  <!-- Technology Badges Bottom Right -->
+  <g transform="translate(30, 395)">
+    <rect x="0" y="0" width="220" height="32" rx="6" fill="#040714" stroke="#A855F7" stroke-width="1.5" />
+    <text x="110" y="21" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="12" fill="#E2E8F0" text-anchor="middle">UNITY 2D • C# • GAMEPLAY</text>
+  </g>
+</svg>
